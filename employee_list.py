@@ -50,33 +50,57 @@ class Employee_list():
                 print('This number is not define.')
 
     def update_emp(self):
-
-        if len(self.emp_list) == 0:
-            print('There is not data to update.')
-
-            return
-
-        self.show_emp()
-
         while True:
-            print('Which employee-list do you want to update ?')
-            number = int(input())
-            if number == 0:
+            if len(self.emp_list) == 0:
+                print('There is not data to update.')
                 break
-            elif len(self.emp_list) >= number:
-                print(self.emp_list[number - 1].get_name())
-                name = input('name: ')
-                self.emp_list[number - 1].set_name(name)
-                print(self.emp_list[number - 1].get_phone())
-                phone = input('phone: ')
-                self.emp_list[number - 1].set_phone(phone)
-                print(self.emp_list[number - 1].get_home())
-                home = input('home: ')
-                self.emp_list[number - 1].set_home(home)
-                print(self.emp_list[number - 1].get_address())
-                address = input('address: ')
-                self.emp_list[number - 1].set_address(address)
-                break
+            else:
+                print('Which employee-list do you want to delete ?')
+                print(0, 'finish')
+                self.show_emp()
+                number = int(input())
+                if number == 0:
+                    print('Thank you.')
+                    break
+                elif len(self.emp_list) >= number:
+                    print('Which item do you want to update ?')
+                    print(0,"I want to update another person's date.")
+                    print(1, 'name')
+                    print(2, 'phone')
+                    print(3, 'home')
+                    print(4, 'address')
+                    item_ls = int(input())
+                    if item_ls == 0:
+                        print('Return to the people choice.')
+                    elif item_ls == 1:
+                        print(self.emp_list[number - 1].get_name())
+                        name = input('name: ')
+                        self.emp_list[number - 1].set_name(name)
+                    elif item_ls == 2:
+                        print(self.emp_list[number - 1].get_phone())
+                        phone = input('phone: ')
+                        self.emp_list[number - 1].set_phone(phone)
+                    elif item_ls == 3:
+                        print(self.emp_list[number - 1].get_home())
+                        home = input('home: ')
+                        self.emp_list[number - 1].set_home(home)
+                    elif item_ls == 4:
+                        print(self.emp_list[number - 1].get_address())
+                        address = input('address: ')
+                        self.emp_list[number - 1].set_address(address)
+                    else:
+                        print('This number is not define.')
+                        print('Please try again from the beginning.')
+                else:
+                    print('This number is not define.')
+
+
+
+
+
+
+
+
 
 
 
